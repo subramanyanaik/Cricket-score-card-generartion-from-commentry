@@ -1,6 +1,6 @@
 f=open("Data.txt","r")
 content=f.readlines()
-c=[x for x in content if not len(x)<50]
+c=[x for x in content if not len(x)<48]
 
 com=[]
 for i in c:
@@ -12,7 +12,7 @@ com.reverse()
     
 count=0
 reference={' leg byes':100,' no ball':20,' wide':10,' no run':0, ' 1 run':1, ' four':4,' 4':4,' 6':6, ' six':6,' 2 runs':2,' 5 runs':5,' 6':6,' 4':4}
-referenceb={' wide':10,' no run':0, ' 1 run':1, ' four':4,' 4':4,' 6':6, ' six':6,' 2 runs':2,' 5 runs':5,' 6':6,' 4':4}
+referenceb={' wide':10,' no run':0, ' 1 run':1, ' four':4,' 4':4,' 6':6, ' six':6,' 2 runs':2,' 5 runs':5,' 6':6,' 4':4,'\xa0four':4,'\xa0six':6}
 bowlers_name=[]
 score=[]
 legbyes=0
@@ -105,7 +105,7 @@ def bowlers(x):
         if temp[0] not in bowlers_name:
             bowlers_name.append(temp[0])
     
-    need=x[1].lower()
+
             
     
     if x[1].lower() in reference.keys():
@@ -254,9 +254,9 @@ print()
 
 #batting stats
 
-print('{}R\tB\t4\t6\tSR'.format('Batsman'.ljust(16)))
+print('{}R\tB\t4\t6\tSR'.format('Batsman'.ljust(20)))
 for player in bname:
-    print('{}{}\t{}\t{}\t{}\t{}'.format(player.ljust(16),batting_stat[player][0]
+    print('{}{}\t{}\t{}\t{}\t{}'.format(player.ljust(20),batting_stat[player][0]
     ,batting_stat[player][1],batting_stat[player][2],batting_stat[player][3],
     batting_stat[player][4]))
     
@@ -276,9 +276,9 @@ for wickets in fallofwickets[::-1]:
 print() 
 print()   
 #bowling stats
-print('{}O\tM\tR\tW\tNB\tWD\tECO'.format('Bowler'.ljust(16)))
+print('{}O\tM\tR\tW\tNB\tWD\tECO'.format('Bowler'.ljust(20)))
 for player in bowlers_name:
-    print(('{}{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(player.ljust(16),
+    print(('{}{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(player.ljust(20),
           bowling_stat[player][0],bowling_stat[player][1],
           bowling_stat[player][2],bowling_stat[player][3],
           bowling_stat[player][4],bowling_stat[player][5],
